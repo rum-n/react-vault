@@ -38,7 +38,42 @@ export default [
         "title": "Understanding the React useReducer Hook",
         "subtitle": "Stephen Hartfield",
         "text": "It allows functional components access to reducer functions from your state management.",
-        "link": "https://auth0.com/blog/handling-authentication-in-react-with-context-and-hooks/", 
+        "link": "https://alligator.io/react/usereducer/", 
         "tags": "react hooks, useReducer, state management, custom hooks"
+    },
+    {    
+        "title": "Let's build a search bar in React!",
+        "subtitle": "Tim Smith",
+        "text": "Example with class components - a bit outdated, but you can still understand some theory.",
+        "link": "https://dev.to/iam_timsmith/lets-build-a-search-bar-in-react-120j", 
+        "tags": "class components, search bar"
+    },
+    {    
+        "title": "How to use useReducer hook to mimic setState",
+        "subtitle": "Przemek Wolnik",
+        "text": "Example of how to implement useReducer.",
+        "link": "https://dev.to/przemwo/how-to-use-usereducer-hook-to-mimics-setstate-method-5990", 
+        "tags": "useReducer, state management, hooks"
+    },
+    {    
+        "title": "React Hooks for Fetching Data",
+        "subtitle": "Dominik Biedebach",
+        "text": "Creating custom hooks and using useEffect to fetch data from an API.",
+        "link": "https://dev.to/przemwo/how-to-use-usereducer-hook-to-mimics-setstate-method-5990", 
+        "tags": "custom hooks, state management, useEffect"
+    },
+    {    
+        "title": "Sharing Remote Data with React Context",
+        "subtitle": "Julian Garamendy",
+        "text": "Using the React Context API for state management.",
+        "link": "https://dev.to/juliang/sharing-remote-data-with-react-context-3859", 
+        "tags": "typescript, state management, context"
+    },
+    {    
+        "title": "Changing Remote Data with Hooks",
+        "subtitle": "Julian Garamendy",
+        "text": "Updating items to an API with Hooks and Patch",
+        "link": "https://dev.to/juliang/changing-remote-data-with-hooks-565p", 
+        "tags": "typescript, state management, patch"
     }
 ];

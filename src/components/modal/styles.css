@@ -1,0 +1,13 @@
+.modal {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.modal button {
+    margin-right: auto;
+}
+
+.modal p {
+    margin-left: 1rem;
+}

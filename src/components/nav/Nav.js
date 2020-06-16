@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import './styles.css';
+import LoginModal from '../modal/LoginModal';
 import logo from '../../img/logo.png';
-import Dropdown from 'react-bootstrap/Dropdown'
 
 const Navigation = () => {
     return (
@@ -17,7 +17,7 @@ const Navigation = () => {
                     <li><NavLink to='/categories'>Browse by topic</NavLink>
                     </li>
                     <li><NavLink to='/add-resource'>Add a resource</NavLink></li>
-                    <li><NavLink to='/about'>About</NavLink></li>
+                    <li><LoginModal/></li>
                 </ul>
             </nav>         
         </header>

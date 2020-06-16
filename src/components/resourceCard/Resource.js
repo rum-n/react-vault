@@ -4,7 +4,6 @@ import './styles.css';
 import resourceData from './../resourceData';
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
-import Button from 'react-bootstrap/Button';
 
 const Resource = () => {
     const [data, setData] = useState(resourceData);

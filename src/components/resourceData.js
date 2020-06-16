@@ -59,7 +59,7 @@ export default [
         "title": "React Hooks for Fetching Data",
         "subtitle": "Dominik Biedebach",
         "text": "Creating custom hooks and using useEffect to fetch data from an API.",
-        "link": "https://dev.to/przemwo/how-to-use-usereducer-hook-to-mimics-setstate-method-5990", 
+        "link": "https://dev.to/bdbch/react-hooks-for-data-part-1-fetching-data-28ge", 
         "tags": "custom hooks, state management, useEffect"
     },
     {    

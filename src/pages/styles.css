@@ -4,16 +4,18 @@
     line-height: 4rem;
     font-weight: 600;
     color: #3a506b;
+    margin-bottom: 2rem;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 650px) {
     .title {
         font-size: 1.5rem;
         line-height: 2rem;
     }
     .resource-list {
-        width: 100vh;
-        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
   }
 
@@ -21,4 +23,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.header-img {
+    width: 18rem;
+    max-width: 50%;
 }

@@ -17,7 +17,7 @@ const LoginModal = () => {
             <a href='#' onClick={handleShow}>Login</a>
 
             <Modal className='modal' show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
+                <Modal.Header>
                 <Modal.Title>Login</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -33,7 +33,7 @@ const LoginModal = () => {
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                <Button variant="primary" onClick={handleClose}>Login</Button>
+                <Button className='confirm' variant="primary" onClick={handleClose}>Login</Button>
                 <Button variant="secondary" onClick={handleClose}>Close</Button>
                 </Modal.Footer>
                 <p>Don't have an account? <SignupModal/></p>

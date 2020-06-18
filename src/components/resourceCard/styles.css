@@ -7,10 +7,23 @@
     transition: all 150ms ease-in-out;
 }
 
+.filter {
+    margin: 0 auto 3rem auto;
+    width: 35rem; 
+}
+
+.filter input[type="text"]:focus {
+    border: 1px solid #5bc0be;
+    box-shadow: 0 0 5px #5bc0be;
+}
+
 @media screen and (max-width: 765px) {
     .card {
         width: 100%;
-        height: 12rem;
+        height: auto;
+    }
+    .filter {
+        width: 100%;
     }
   }
 

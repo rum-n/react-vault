@@ -5,6 +5,7 @@ footer {
     margin-top: 3rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 footer p {
@@ -20,8 +21,6 @@ footer p img{
 }
 
 .credits {
-    position: absolute;
-    right: 0;
     padding-right: 1rem;
 }
 
@@ -36,3 +35,16 @@ footer a:hover {
     text-decoration: none;
     color: #5bc0be;
 }
+
+@media screen and (max-width: 765px) {
+    footer {
+        display: inline-block;
+        padding: 1.5rem;
+    }
+    footer p {
+        text-align: center;
+    }
+    .credits {
+        text-align: center;
+    }
+  }

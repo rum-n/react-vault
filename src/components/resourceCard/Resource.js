@@ -31,7 +31,7 @@ const Resource = () => {
 
     return (
         <main>
-        <Form style={{ margin: '0 auto 3rem auto', width: '35rem' }}>
+        <Form className='filter'>
         <FormControl 
             type="text" 
             placeholder="Filter" 

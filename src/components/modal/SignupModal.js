@@ -16,7 +16,7 @@ const SignupModal = () => {
             <a href='#' onClick={handleShow}>Sign up!</a>
 
             <Modal className='modal' show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
+                <Modal.Header>
                 <Modal.Title>Sign up</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -39,7 +39,7 @@ const SignupModal = () => {
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                <Button variant="primary" onClick={handleClose}>Sign up</Button>
+                <Button className='confirm' variant="primary" onClick={handleClose}>Sign up</Button>
                 <Button variant="secondary" onClick={handleClose}>Close</Button>
                 </Modal.Footer>
             </Modal>

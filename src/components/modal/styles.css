@@ -6,8 +6,23 @@
 
 .modal button {
     margin-right: auto;
+    border: none
 }
+
+.confirm {
+    background-color: #3a506b;
+}
+
+.confirm:hover,
+.confirm:active {
+    background-color: #1c2541;
+}
+
 
 .modal p {
     margin-left: 1rem;
+}
+
+.modal a {
+    color: #5bc0be;
 }

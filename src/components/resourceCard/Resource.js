@@ -47,7 +47,6 @@ const Resource = () => {
                     <Card.Subtitle className="mb-2 text-muted">by: {tile.subtitle}</Card.Subtitle>
                         <Card.Text>{tile.text}</Card.Text>
                     <Card.Link className='card-link' href={tile.link}>Learn more</Card.Link>
-                    {/* <Button variant="outline-primary" size="sm" href={tile.link}>Learn more</Button> */}
                 </Card.Body>
                 </Card>
             ))}

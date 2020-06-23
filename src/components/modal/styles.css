@@ -4,13 +4,18 @@
     align-items: center;
 }
 
+.modal-footer {
+    padding: 0.5rem;
+}
+
 .modal button {
     margin-right: auto;
-    border: none
+    border: none;
 }
 
 .confirm {
     background-color: #3a506b;
+    margin-right: 0.5rem !important;
 }
 
 .confirm:hover,

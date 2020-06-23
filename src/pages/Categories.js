@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Add = () => {
+const Categories = () => {
     return (
         <div className='main-content'>
-            <div>Add a resource page</div>
+            <div>Categories page</div>
         </div>
     );
 }
 
-export default Add; 
+export default Categories; 

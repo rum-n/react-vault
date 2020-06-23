@@ -1,8 +1,9 @@
-import React, { useState, useRef, useContext } from 'react';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import AuthContext from './../../context/auth-context';
+// import AuthContext from './../../context/auth-context';
 import './styles.css';
 
 const AddResourceModal = () => {

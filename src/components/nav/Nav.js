@@ -1,14 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import './styles.css';
 import LoginModal from '../modal/LoginModal';
 import AddResourceModal from '../modal/AddResourceModal';
 import logo from '../../img/logo.png';
 import AuthContext from './../../context/auth-context';
-import Button from 'react-bootstrap/Button';
 
 const Navigation = () => {
- const context = useContext(AuthContext);
 
     return (
         <AuthContext.Consumer>
@@ -21,8 +19,7 @@ const Navigation = () => {
             </Link>
             <nav>
                 <ul className='menu'>
-                    <li><NavLink to='/categories'>Browse by topic</NavLink>
-                    </li>
+                    <li><NavLink to='/categories'>Browse by topic</NavLink></li>
                     {context.token && <li><AddResourceModal/></li>}
                     {!context.token && <li><LoginModal/></li>}
                     {context.token && <li onClick={context.logout}>Logout</li>}

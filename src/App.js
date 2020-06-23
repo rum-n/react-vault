@@ -4,7 +4,7 @@ import './App.css';
 import Home from './pages/Home';
 import Navigation from './components/nav/Nav';
 import Footer from './components/footer/Footer';
-import Add from './pages/Add';
+import Categories from './pages/Categories';
 import AuthContext from './context/auth-context';
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
       <Navigation/>
       <Switch>
         <Route path='/' exact component={Home} />
-        {token && <Route path='/add-resource' component={Add}/>}
+        <Route path='/categories' component={Categories}/>
       </Switch>
       <Footer/>
       </AuthContext.Provider>

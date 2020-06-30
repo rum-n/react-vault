@@ -58,7 +58,7 @@ const AddResourceModal = () => {
     
     const token = context.token;
 
-    fetch('http://localhost:8000/graphql', {
+    fetch('https://reactvault-api.herokuapp.com/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {

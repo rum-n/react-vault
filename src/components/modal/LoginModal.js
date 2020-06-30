@@ -56,7 +56,7 @@ const LoginModal = () => {
             }
         }
 
-    fetch('http://localhost:8000/graphql', {
+    fetch('https://reactvault-api.herokuapp.com/graphql', {
         method: 'POST',
         body: JSON.stringify(requestBody),
         headers: {
@@ -90,21 +90,21 @@ const LoginModal = () => {
 
             <Modal className='modal' show={show} onHide={handleClose}>
                 <Modal.Header>
-                <Modal.Title>{isLoggedIn ? 'Login' : 'Sign Up'}</Modal.Title>
+                <Modal.Title>{isLoggedIn ? 'Login' : 'Sorry, but the sign up is invite-only at the moment.'}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={submitHandler}>
                     <Form.Group>
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" ref={emailEl} />
+                        <Form.Control type="email" placeholder="Enter email" ref={emailEl} disabled={!isLoggedIn ? true : false}/>
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" ref={passwordEl} />
+                        <Form.Control type="password" placeholder="Password" ref={passwordEl} disabled={!isLoggedIn ? true : false}/>
                     </Form.Group>
                     {!isLoggedIn && <Form.Group controlId="formGroupPassword">
                         <Form.Label>Repeat Password</Form.Label>
-                        <Form.Control type="password" placeholder="Repeat Password"/>
+                        <Form.Control type="password" placeholder="Repeat Password" disabled={!isLoggedIn ? true : false}/>
                     </Form.Group>}
                     <Button type='submit' className='confirm' variant="primary" >{isLoggedIn ? 'Login' : 'Sign Up'}</Button>
                     <Button variant="secondary" onClick={handleClose}>Close</Button>

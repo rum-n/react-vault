@@ -2,10 +2,25 @@ import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import './styles.css';
 import resourceData from './../resourceData';
-import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
+import Form from 'react-bootstrap/Form';
+// import AuthContext from './../../context/auth-context';
+import FormControl from 'react-bootstrap/FormControl';
 
 const Resource = () => {
+    //   let resourceData = {
+    //     query: `
+    //         query {
+    //           resources {
+    //             title
+    //             subtitle
+    //             text
+    //             link
+    //             tags
+    //           }
+    //         }
+    //     `
+    // };
+
     const [data, setData] = useState(resourceData);
     const [searchText, setSearchText] = useState("");
 

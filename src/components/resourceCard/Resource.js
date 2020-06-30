@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import './styles.css';
 import resourceData from './../resourceData';
@@ -7,21 +7,8 @@ import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 
 const Resource = () => {
-    //   let resourceData = {
-    //     query: `
-    //         query {
-    //           resources {
-    //             title
-    //             subtitle
-    //             text
-    //             link
-    //             tags
-    //           }
-    //         }
-    //     `
-    // };
-
     const [data, setData] = useState(resourceData);
+    const [resources, setResources] = useState([]);
     const [searchText, setSearchText] = useState("");
 
     const excludeColumns = ["link"];
@@ -42,7 +29,48 @@ const Resource = () => {
           });
           setData(filteredData);
         }
-      }
+    }
+
+    const fetchResources = () => {
+      const requestBody = {
+        query: `
+            query {
+              resources {
+                title
+                subtitle
+                text
+                link
+                tags
+              }
+            }
+        `
+      };
+  
+      fetch('https://reactvault-api.herokuapp.com/graphql', {
+        method: 'POST',
+        body: JSON.stringify(requestBody),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(res => {
+          if (res.status !== 200 && res.status !== 201) {
+            throw new Error('Failed!');
+          }
+          return res.json();
+        })
+        .then(resData => {
+          const resources = resData.resources;
+          setResources({ resources: resources });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    };
+
+    useEffect(() => {
+      fetchResources();
+    });
 
     return (
         <main>

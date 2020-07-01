@@ -77,7 +77,6 @@ const LoginModal = () => {
                     resData.data.login.tokenExpiration
                 );
             }
-            console.log(resData);
         })
         .catch(err => {
             console.log(err);

@@ -39,7 +39,6 @@ const AddResourceModal = () => {
         }
 
         const resource = { title, subtitle, text, link, tags };
-        console.log(resource);
 
         const requestBody = {
                 query: `
@@ -66,28 +65,15 @@ const AddResourceModal = () => {
         Authorization: 'Bearer ' + token
       }
     })
-        .then(res => {
-            if (res.status !== 200 && res.status !== 201) {
+    .then(res => {
+        if (res.status !== 200 && res.status !== 201) {
             throw new Error('Failed!');
-            }
-            return res.json();
-        })
-        // .then(resData => {
-        //       const updatedResources = [];
-        //       updatedResources.push({
-        //         _id: resData.data.createResource._id,
-        //         title: resData.data.createResource.title,
-        //         subtitle: resData.data.createResource.subtitle,
-        //         text: resData.data.createResource.text,
-        //         link: resData.data.createResource.link,
-        //         tags: resData.data.createResource.tags
-        //       });
-        //       return { resources: updatedResources };
-        //   })
-          .catch(err => {
-            console.log(err);
-          });
-    };
+        }
+        return res.json();
+    }).catch(err => {
+        console.log(err);
+    });
+};
 
     return (
         <main>

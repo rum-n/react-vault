@@ -1,35 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import './styles.css';
-import resourceData from './../resourceData';
+// import resourceData from './../resourceData';
 import Form from 'react-bootstrap/Form';
 // import AuthContext from './../../context/auth-context';
 import FormControl from 'react-bootstrap/FormControl';
 
 const Resource = () => {
-    const [data, setData] = useState(resourceData);
-    const [resources, setResources] = useState();
+    // const [data, setData] = useState(resourceData);
+    const [resources, setResources] = useState([]);
     const [searchText, setSearchText] = useState("");
-
-    const excludeColumns = ["link"];
-
-    const handleChange = value => {
-        setSearchText(value);
-        filterData(value);
-      };
-
-    const filterData = (value) => {
-        const lowercasedValue = value.toLowerCase().trim();
-        if (lowercasedValue === "") setData(resourceData);
-        else {
-          const filteredData = resourceData.filter(item => {
-            return Object.keys(item).some(key =>
-              excludeColumns.includes(key) ? false : item[key].toString().toLowerCase().includes(lowercasedValue)
-            );
-          });
-          setData(filteredData);
-        }
-    }
 
     const fetchResources = () => {
       const requestBody = {
@@ -46,7 +26,7 @@ const Resource = () => {
         `
       };
   
-      fetch('https://https://reactvault-api.herokuapp.com//graphql', {
+      fetch('https://reactvault-api.herokuapp.com/graphql', {
         method: 'POST',
         body: JSON.stringify(requestBody),
         headers: {
@@ -61,7 +41,7 @@ const Resource = () => {
         })
         .then(resData => {
           const resources = resData.data.resources;
-          setResources({ resources: resources });
+          setResources(resources);
         })
         .catch(err => {
           console.log(err);
@@ -72,6 +52,26 @@ const Resource = () => {
       fetchResources();
     });
 
+    const excludeColumns = ["link"];
+
+    const handleChange = value => {
+        setSearchText(value);
+        filterData(value);
+      };
+
+    const filterData = (value) => {
+        const lowercasedValue = value.toLowerCase().trim();
+        if (lowercasedValue === "") setResources();
+        else {
+          const filteredData = resources.filter(item => {
+            return Object.keys(item).some(key =>
+              excludeColumns.includes(key) ? false : item[key].toString().toLowerCase().includes(lowercasedValue)
+            );
+          });
+          setResources(filteredData);
+        }
+    }
+
     return (
         <main>
         <Form className='filter'>
@@ -80,10 +80,11 @@ const Resource = () => {
             placeholder="Filter" 
             className="mr-sm-2"
             value={searchText}
-            onChange={e => handleChange(e.target.value)} />
+            onChange={e => handleChange(e.target.value)} 
+            />
         </Form>
         <div className='resource-list'>
-            {data.map((tile) => (
+            {resources.map((tile) => (
             <Card className='card' key={tile.link}>
                 <Card.Body>
                     <Card.Title>{tile.title}</Card.Title>

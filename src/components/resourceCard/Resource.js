@@ -8,7 +8,7 @@ import FormControl from 'react-bootstrap/FormControl';
 
 const Resource = () => {
     const [data, setData] = useState(resourceData);
-    const [resources, setResources] = useState([]);
+    const [resources, setResources] = useState();
     const [searchText, setSearchText] = useState("");
 
     const excludeColumns = ["link"];
@@ -46,7 +46,7 @@ const Resource = () => {
         `
       };
   
-      fetch('https://reactvault-api.herokuapp.com/graphql', {
+      fetch('https://https://reactvault-api.herokuapp.com//graphql', {
         method: 'POST',
         body: JSON.stringify(requestBody),
         headers: {
@@ -60,7 +60,7 @@ const Resource = () => {
           return res.json();
         })
         .then(resData => {
-          const resources = resData.resources;
+          const resources = resData.data.resources;
           setResources({ resources: resources });
         })
         .catch(err => {

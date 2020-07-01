@@ -3,10 +3,7 @@ import Resource from '../components/resourceCard/Resource';
 import './styles.css';
 import MainImg from './../img/sitonreact.svg';
 import HeaderImg from './../img/webdev.svg';
-
 import Container from 'react-bootstrap/Container';
-// import Form from 'react-bootstrap/Form'
-// import FormControl from 'react-bootstrap/FormControl'
 
 const Home = () => {
 

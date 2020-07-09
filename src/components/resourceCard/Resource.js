@@ -90,7 +90,7 @@ const Resource = () => {
         </Form>
       
         <div className='resource-list'>
-        {loading ? (<Spinner animation="border" role="status"/>) : 
+        {!loading ? (<Spinner animation="border" role="status"/>) : 
             resources.map((tile) => (
             <Card className='card' key={tile.link}>
                 <Card.Body>

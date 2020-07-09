@@ -38,7 +38,7 @@ const AddResourceModal = () => {
                 return;
         }
 
-        const resource = { title, subtitle, text, link, tags };
+        // const resource = { title, subtitle, text, link, tags };
 
         const requestBody = {
                 query: `

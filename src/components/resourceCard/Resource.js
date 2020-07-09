@@ -5,13 +5,16 @@ import './styles.css';
 import Form from 'react-bootstrap/Form';
 // import AuthContext from './../../context/auth-context';
 import FormControl from 'react-bootstrap/FormControl';
+import Spinner from 'react-bootstrap/Spinner'
 
 const Resource = () => {
     // const [data, setData] = useState(resourceData);
     const [resources, setResources] = useState([]);
     const [searchText, setSearchText] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const fetchResources = () => {
+      setLoading(true);
       const requestBody = {
         query: `
             query {
@@ -42,9 +45,11 @@ const Resource = () => {
         .then(resData => {
           const resources = resData.data.resources;
           setResources(resources);
+          setLoading(false);
         })
         .catch(err => {
           console.log(err);
+          setLoading(false);
         });
     };
 
@@ -83,8 +88,10 @@ const Resource = () => {
             onChange={e => handleChange(e.target.value)} 
             />
         </Form>
+      
         <div className='resource-list'>
-            {resources.map((tile) => (
+        {loading ? (<Spinner animation="border" role="status"/>) : 
+            resources.map((tile) => (
             <Card className='card' key={tile.link}>
                 <Card.Body>
                     <Card.Title>{tile.title}</Card.Title>
